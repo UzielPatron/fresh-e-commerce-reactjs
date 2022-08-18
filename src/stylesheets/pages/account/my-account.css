@@ -1,0 +1,230 @@
+.loading-user{
+    display: flex;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-user > img{
+    max-height: 100px;
+}
+
+.my-account-container{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.my-account-title{
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.my-account-title-name{
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.my-account-data-container{
+    margin-top: 30px;
+}
+
+.my-account-data-title{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.my-account-data-fields-container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(autofill, auto);
+    border-radius: 5px;
+    margin-top: 15px;
+    row-gap: 1px;
+}
+
+.my-account-data-field-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.my-account-data-field-container:nth-child(1){
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.my-account-data-field-container:nth-last-child(1){
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.my-account-data-field-value{
+    text-decoration: none;
+    color: var(--color-blue);
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.my-account-data-field-value:hover{
+    color: var(--color-blue_active);
+}
+
+.my-account-data-field-input{
+    border: none;
+    outline: none;
+    text-align: right;
+    font-size: 16px;
+    min-width: 280px;
+    font-weight: 300;
+    color: rgba(0,0,0,.55);
+}
+
+
+
+.my-account-btn-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.my-account-close-session-btn{
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.my-account-close-session-btn:hover{
+    background-color: var(--color-danger_hover);
+}
+
+.my-account-close-session-btn:active{
+    background-color: var(--color-danger_active);
+}
+
+.my-account-edit-account-btn{
+    border: none;
+    outline: none;
+    display: flex;
+    color: var(--color-blue);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.is-editable{
+    color: var(--color-green);
+    font-weight: 400;
+}
+
+.is-saving{
+    color: white;
+    background-color: var(--color-green);
+    width: 100px;
+    border-radius: 4px;
+}
+
+.saving-data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saving-data > img{
+    height: 25px;
+}
+
+.password{
+    flex-direction: column;
+}
+
+.my-account-data-field-password-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.my-account-data-field-password{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-account-data-field-password-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    flex-direction: row;
+    color: var(--color-orange);
+    padding: 3px 0px 3px 10px;
+    font-size: 15px;
+}
+
+.my-account-data-field-password-item > input{
+    border-radius: 5px;
+    border: 1px solid #0003;
+    outline: none;
+    padding: 3px 10px;
+    width: 150px
+}
+
+.save-password{
+    color: var(--color-green);
+}
+.save-password:hover{
+    color: var(--color-green_hover);
+}
+
+.my-account-data-field-password-cancel-btn{
+    border: none;
+    outline: none;
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    align-self: flex-end;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.my-account-data-field-password-cancel-btn:hover{
+    background-color: var(--color-danger_hover);
+}
+
+.my-account-data-field-password-cancel-btn:active{
+    background-color: var(--color-danger_active);
+}
+
+
+@media screen and (max-width: 550px) {
+    .my-account-data-field-container{
+        flex-direction: column;
+    }
+
+    .my-account-data-field-password-container{
+        flex-direction: column;
+    }
+    
+    .my-account-data-field-input{
+        text-align: left;
+        margin-top: 5px;
+        margin-left: 20px;
+        min-width: 170px;
+    }
+
+    .my-account-data-field-value{
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+}

@@ -1,0 +1,28 @@
+/* .home-container{
+
+} */
+
+.home{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.home__products{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.home-loading{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-loading > img{
+    height: 100px;
+}
+
+.search-page-loading > img{
+    height: 120px;
+}

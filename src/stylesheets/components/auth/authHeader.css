@@ -1,0 +1,16 @@
+.auth__header-container{
+    background-color: var(--color-primary);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.auth__header__logo__img{
+    height: 50px;
+}
+
+.auth__divisor{
+    height: 200px;
+    background-color: var(--color-primary);
+}

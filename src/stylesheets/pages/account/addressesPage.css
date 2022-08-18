@@ -1,0 +1,237 @@
+.loading-addresses{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-addresses > img {
+    height: 100px;
+}
+
+.addresses-container{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.addresses-title{
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.addresses-not-addresses{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.addresses-not-addresses > ion-icon{
+    font-size: 50px;
+    color: #0009;
+}
+
+.addresses-not-addresses > p{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+
+.addresses-add-address-container{
+    background-color: var(--color-white);
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.addresses-add-address-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addresses-add-address-container > ion-icon {
+    font-size: 20px;
+    color: #0009;
+}
+
+/* AddAddressForm styles */
+/* AddAddressForm styles */
+/* AddAddressForm styles */
+
+.addresses-add-address-form-container{
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0003;
+}
+
+.addresses-add-address-form{
+    position: relative;
+    background-color: var(--color-white);
+    padding: 20px 40px;
+    border-radius: 5px;
+    width: 420px;
+}
+
+.addresses-add-address-form-title{
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.addresses-add-address-form-input{
+    width: 100%;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-grey);
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    margin: 4px 0;
+}
+
+.addresses-add-address-form-input:focus{
+    border-color: var(--color-primary);
+}
+
+.addresses-add-address-btn-submit-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addresses-add-address-btn-submit{
+    padding: 10px 0px;
+    margin: 6px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: .5s;
+}
+
+.addresses-close-modal{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.addresses-close-modal > ion-icon{
+    font-size: 20px;
+}
+
+.adding-address-loading{
+    height: 16px;
+}
+
+
+/* ADDRESS LIST STYLES */
+/* ADDRESS LIST STYLES */
+/* ADDRESS LIST STYLES */
+
+.addresses-address-item-container{
+    background-color: var(--color-white);
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 7px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.addresses-address-item-title{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-violet);
+    margin-bottom: 10px;
+}
+
+.addresses-address-item-data > p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.addresses-address-item-btn-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.addresses-address-item-btn-delete{
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 7px 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.addresses-address-item-btn-delete:hover{
+    background-color: var(--color-danger_hover);
+}
+
+.addresses-address-item-btn-delete:active{
+    background-color: var(--color-danger_active);
+}
+
+
+
+.is-deleting-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.is-deleting-loading{
+    height: 100px;
+}
+
+.non-display{
+    display: none;
+}
+
+.yes-display{
+    display: flex;
+}
+
+@media screen and (max-width: 450px) {
+    .addresses-address-item-container{
+        flex-direction: column;
+    }
+
+    .addresses-address-item-btn-container{
+        margin-top: 20px;
+        justify-content: flex-end;
+    }
+}

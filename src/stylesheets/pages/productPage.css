@@ -1,0 +1,349 @@
+/* PRODUCT */
+/* PRODUCT */
+/* PRODUCT */
+
+.product-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.product{ 
+    padding: 10px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.product__title{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.product__image-container{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.product__image{
+   width: 100%;
+}
+
+
+.product__data_title{
+    display: none
+}
+
+/* PRICE */
+/* PRICE */
+/* PRICE */
+
+.products__price-container{
+    padding: 0 10px;
+}
+
+.products__price-and-discount{
+    display: flex;
+    flex-direction: row;
+}
+
+.products__price{
+    font-size: 30px;
+    letter-spacing: 1.2px;
+    margin-bottom: 2px;
+}
+
+.products__previous-price{
+    font-size: 18px;
+    letter-spacing: 1.1px;
+    margin-left: 5px;
+    text-decoration: line-through;
+    color: var(--color-danger);
+    padding-top: 2px;
+}
+
+.products__discount {
+    color: var(--color-green);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* BUTTONS */
+/* BUTTONS */
+/* BUTTONS */
+
+
+.product__btns_addToCart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 0;
+    background-color: var(--color-green);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .5s; 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+.product__btns_addToCart:hover{
+    background-color: var(--color-green_hover);
+}
+
+.product__btns_addToCart:active{
+    background-color: var(--color-green_active);
+}
+
+.product__btns_addToCart_text{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.product__btns_addToCart > ion-icon {
+    color: var(--color-white);
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+
+.product__btns_addToFavorites{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .5s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.product__btns_addToFavorites_text{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+.product__btns_addToFavorites > ion-icon {
+    color: var(--color-white);
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.favorite{
+    background-color: var(--color-danger);
+}
+.favorite:hover{
+    background-color: var(--color-danger_hover);
+}
+.favorite:active{
+    background-color: var(--color-danger_active);
+}
+
+
+.not-favorite{
+    background-color: var(--color-blue);
+}
+.not-favorite:hover{
+    background-color: var(--color-blue_hover);
+}
+.not-favorite:active{
+    background-color: var(--color-blue_active);
+}
+
+
+
+
+/* RELATED PRODUCTS CONTAINER */
+
+
+.related-products-desktop{
+    display: none;
+    margin-top: 0px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.related-products-mobile{
+    display: inherit;
+    margin-top: 0px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.loading{
+    background-color: #666 !important;
+    cursor: progress;
+}
+
+.product__loading__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.product__loading__container > img {
+    height: 130px;
+}
+
+
+/* MEDIA QUERYS */
+/* MEDIA QUERYS */
+/* MEDIA QUERYS */
+
+
+@media screen and (min-width: 768px) {
+    /* PRODUCT */
+    /* PRODUCT */
+    
+    .product__title{
+        display: none;
+    }
+
+    .product{ 
+        display: flex;
+        flex-direction: row;
+    }
+
+    .product__image-container{
+        width: 65%;
+        padding-right: 15px;
+    }
+
+    
+    .product__data-container{
+        width: 35%;
+        max-height: 530px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid var(--color-grey);
+        border-radius: 5px;
+    }
+
+    .product__data_title{
+        display: block;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    /* PRICE */
+    /* PRICE */
+    
+    .products__price-container{
+        padding: 0px;
+        margin-bottom: 40px;
+        margin-top: 15px;
+    }
+
+    .products__price-and-discount{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .products__price{
+        font-size: 30px;
+        letter-spacing: 1.2px;
+        margin-bottom: 2px;
+    }
+
+    .products__previous-price{
+        font-size: 18px;
+        letter-spacing: 1.2px;
+        margin-left: 10px;
+        padding-top: 2px;
+    }
+
+    .products__discount {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+
+    /* BUTTONS */
+    /* BUTTONS */
+
+    .product__btns_addToCart{
+        padding: 12px 0;
+        background-color: var(--color-green);
+        outline: none;
+        border: none;
+        border-radius: 4px;
+    }
+    
+    .product__btns_addToCart_text{
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--color-white);
+    }
+    
+    .product__btns_addToCart > ion-icon {
+        color: var(--color-white);
+        font-size: 20px;
+        margin-left: 8px;
+    }
+    
+    .product__btns_addToFavorites{
+        padding: 12px 0;
+        margin-top: 15px;
+    }
+    
+    .product__btns_addToFavorites_text{
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--color-white);
+    }
+    
+    .product__btns_addToFavorites > ion-icon {
+        color: var(--color-white);
+        font-size: 20px;
+        margin-left: 8px;
+    }
+
+}
+
+
+@media screen and (min-width: 1000px){
+     /* ocultar related products mobile */
+     .related-products-mobile{
+        display: none;
+    }
+
+    .related-products-desktop{
+        display: inherit;
+    }
+
+    .product-container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .products__price-and-discount{
+        flex-direction: column;
+    }
+}

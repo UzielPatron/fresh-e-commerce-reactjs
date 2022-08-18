@@ -1,0 +1,69 @@
+.slider-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    width: 400%;
+    background: transparent;
+}
+
+
+.slider-img{
+    width: 100vw;
+    max-width: 1500px;
+    min-height: 200px;
+    max-height: 500px;
+    object-fit: cover;
+    cursor: grab;
+    pointer-events: none;
+    vertical-align: top;
+}
+
+
+.slider-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    color: var(--color-black);
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+.right-button{
+    right: 0px;
+}
+
+.left-button{
+    left: 0px;
+}
+
+.slider-button-icon > ion-icon{
+    height: 30px;
+    width: 30px;
+    color: var(--color-white)
+}
+
+@media screen and ( min-width: 1000px ) {
+    .slider-button-icon{
+        height: 50px;
+        width: 50px;
+    }
+
+    .right-button{
+        padding-right: 15px;
+    }
+
+    .left-button{
+        padding-left: 15px;
+    }
+}
