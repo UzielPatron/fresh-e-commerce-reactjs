@@ -6,8 +6,6 @@ export const getBannerImages = async () => {
             desktop: [],
             mobile: [],
         };
-        // const response = await strapiApi.get('/home-banners?position=1');
-        // const responseMobile = await strapiApi.get('home-banners?position=2');
 
         strapiApi.get('/home-banners?position=1')
             .then(res => result.desktop = res.data[0].banner)
@@ -25,10 +23,10 @@ export const getBannerImages = async () => {
     }
 };
 
-export const getProductsInOffert = async () => {
+export const getProductsInOffert = async (page = 0, limit = -1) => {
     
     try {
-        const response = await strapiApi.get('/products?discount_gte=1&stock_gte=1&_sort=createdAt:DESC');
+        const response = await strapiApi.get(`/products?_start=${ page * 8 }&_limit=${ limit }&discount_gte=1&stock_gte=1&_sort=createdAt:DESC`);
         
         return response.data;
     } catch (error) {
@@ -37,9 +35,9 @@ export const getProductsInOffert = async () => {
     }
 };
 
-export const getLatestProducts = async () => {
+export const getLatestProducts = async (page = 0, limit = -1) => {
     try {
-        const response = await strapiApi.get('/products?_limit=30&stock_gte=1&_sort=createdAt:DESC');
+        const response = await strapiApi.get(`/products?_start=${ page * 8 }&_limit=${ limit }&stock_gte=1&_sort=createdAt:DESC`);
         
         return response.data;
     } catch (error) {
