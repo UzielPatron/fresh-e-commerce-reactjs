@@ -1,5 +1,4 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, {useContext} from 'react';
 import { UserContext } from '../../context/UserContext';
 import { ProductItem } from './ProductItem';
 import '../../stylesheets/components/home/productList.css';

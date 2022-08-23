@@ -12,17 +12,18 @@ export const HomePage = () => {
     const [images, setImages] = useState(null);
     const [productsInOffert, setProductsInOffert] = useState(null);
     const [latestProducts, setLatestProducts] = useState(null);
+    const [page, setPage] = useState(0);
 
     useEffect(() => {
         ( () =>{
 
-            getProductsInOffert()
+            getProductsInOffert(page, 8)
                 .then( res => setProductsInOffert(res));
 
             getBannerImages()
                 .then(res => setImages(res));
 
-            getLatestProducts()
+            getLatestProducts(page, 8)
                 .then(res => setLatestProducts(res));
 
         })();
@@ -45,6 +46,13 @@ export const HomePage = () => {
                                     {
                                         productsInOffert && <ProductList products={ productsInOffert } title='Productos en oferta' />
                                     }
+                                    <div className='products-view-more' >
+                                        <button>
+                                            {
+                                                true ? 'MOSTRAR MÁS' : <Loading />
+                                            }
+                                        </button>
+                                    </div>
                                     </div>
                                     <div className="home__products-latest">
                                     {
