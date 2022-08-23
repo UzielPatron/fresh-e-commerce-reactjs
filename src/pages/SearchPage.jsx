@@ -5,6 +5,7 @@ import { Header } from '../components/Header';
 import { ProductList } from '../components/home/ProductList';
 import { NotProducts } from '../components/search/NotProducts';
 import { Loading } from '../components/utils/Loading';
+import '../stylesheets/pages/searchPage.css';
 
 
 
@@ -24,18 +25,20 @@ export const SearchPage = () => {
     return (
         <>
             <Header />
-            <div className="home__products">
-            {
-                !searchProducts
-                    ? (
-                        <div style={ styles.loadingContainer } className="search-page-loading">
-                            <Loading />
-                        </div>
-                    )
-                    : searchProducts.length < 1
-                        ? <NotProducts title={ `${searchValue[0].toUpperCase() }${ searchValue.slice(1).toLowerCase() }` }/>
-                        : <ProductList products={ searchProducts } title={ `${searchValue[0].toUpperCase() }${ searchValue.slice(1).toLowerCase() }` } />
-            }
+            <div className="search-container">
+                <div className="search-products">
+                {
+                    !searchProducts
+                        ? (
+                            <div style={ styles.loadingContainer } className="search-page-loading">
+                                <Loading />
+                            </div>
+                        )
+                        : searchProducts.length < 1
+                            ? <NotProducts title={ `${searchValue[0].toUpperCase() }${ searchValue.slice(1).toLowerCase() }` }/>
+                            : <ProductList products={ searchProducts } title={ `${searchValue[0].toUpperCase() }${ searchValue.slice(1).toLowerCase() }` } />
+                }
+                </div>
             </div>
         </>
   )
