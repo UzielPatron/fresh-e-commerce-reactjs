@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getLatestProducts, getProductsInOffert, getBannerImages  } from '../api/productsApi.js';
+import { getLatestProducts, getProductsInOffert, getBannerImages, getNumberOfProductsInOffer, getNumberOfAllProducts  } from '../api/productsApi.js';
 import { Header } from '../components/Header.jsx';
 import { ProductList, Slider } from '../components/home';
 import { Loading } from '../components/utils/Loading.jsx';
@@ -12,19 +12,62 @@ export const HomePage = () => {
     const [images, setImages] = useState(null);
     const [productsInOffert, setProductsInOffert] = useState(null);
     const [latestProducts, setLatestProducts] = useState(null);
-    const [page, setPage] = useState(0);
+    const [offerProductPage, setOfferProductPage] = useState(0);
+    const [loadingOfferProducts, setLoadingOfferProducts] = useState(false);
+    const [maxNumberOfOfferProducts, setMaxNumberOfOfferProducts] = useState(0);
+    const [latestProductPage, setLatestProductPage] = useState(0);
+    const [loadingLatestProducts, setLoadingLatestProducts] = useState(false);
+    const [maxNumberOfLatestProducts, setMaxNumberOfLatestProducts] = useState(0);
+
+    const handleSeeMoreOffer = () => {
+        setLoadingOfferProducts(true);
+        const page = offerProductPage + 1;
+        
+        getProductsInOffert(page, 8)
+            .then( res => {
+                const newProducts = [];
+                newProducts.push(...productsInOffert, ...res);
+                setProductsInOffert(newProducts);
+                setOfferProductPage( page );
+                setLoadingOfferProducts(false);
+            });
+
+    };
+
+
+    const handleSeeMoreLatest = () => {
+        setLoadingLatestProducts(true);
+        const page = latestProductPage + 1;
+        
+        getLatestProducts(page, 8)
+            .then( res => {
+                const newProducts = [];
+                newProducts.push(...latestProducts, ...res);
+                setLatestProducts(newProducts);
+                setLatestProductPage( page );
+                setLoadingLatestProducts(false);
+            });
+
+    };
+
 
     useEffect(() => {
         ( () =>{
 
-            getProductsInOffert(page, 8)
+            getProductsInOffert(offerProductPage, 8)
                 .then( res => setProductsInOffert(res));
 
             getBannerImages()
                 .then(res => setImages(res));
 
-            getLatestProducts(page, 8)
+            getLatestProducts(latestProductPage, 8)
                 .then(res => setLatestProducts(res));
+
+            getNumberOfProductsInOffer()
+                .then( res => setMaxNumberOfOfferProducts(res));
+
+            getNumberOfAllProducts()
+                .then( res => setMaxNumberOfLatestProducts(res));
 
         })();
     }, []);
@@ -47,16 +90,39 @@ export const HomePage = () => {
                                         productsInOffert && <ProductList products={ productsInOffert } title='Productos en oferta' />
                                     }
                                     <div className='products-view-more' >
-                                        <button>
-                                            {
-                                                true ? 'MOSTRAR MÁS' : <Loading />
-                                            }
-                                        </button>
+                                    {
+                                        productsInOffert
+                                            &&
+                                        maxNumberOfOfferProducts > ((offerProductPage + 1) * 8)
+                                            &&
+                                        (
+                                            <button onClick={ handleSeeMoreOffer } >
+                                                {
+                                                    loadingOfferProducts ? <Loading /> : 'MOSTRAR MÁS'
+                                                }
+                                            </button>
+                                        )
+                                    }
                                     </div>
                                     </div>
                                     <div className="home__products-latest">
                                     {
                                         latestProducts && <ProductList products={ latestProducts } title='Nuevos productos' />
+                                    }
+                                    </div>
+                                    <div className='products-view-more' >
+                                    {
+                                        maxNumberOfLatestProducts > ((latestProductPage + 1) * 8)
+                                            &&
+                                        latestProducts
+                                            &&
+                                        (
+                                            <button onClick={ handleSeeMoreLatest } >
+                                                {
+                                                    loadingLatestProducts ? <Loading /> : 'MOSTRAR MÁS'
+                                                }
+                                            </button>
+                                        )
                                     }
                                     </div>
                                 </div>

@@ -35,9 +35,30 @@ export const getProductsInOffert = async (page = 0, limit = -1) => {
     }
 };
 
+export const getNumberOfProductsInOffer = async () => {
+    try {
+        const response = await strapiApi.get(`/products/count?discount_gte=1&stock_gte=1&_sort=createdAt:DESC`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 export const getLatestProducts = async (page = 0, limit = -1) => {
     try {
         const response = await strapiApi.get(`/products?_start=${ page * 8 }&_limit=${ limit }&stock_gte=1&_sort=createdAt:DESC`);
+        
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const getNumberOfAllProducts = async () => {
+    try {
+        const response = await strapiApi.get(`/products/count?stock_gte=1&_sort=createdAt:DESC`);
         
         return response.data;
     } catch (error) {
