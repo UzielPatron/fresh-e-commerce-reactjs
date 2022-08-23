@@ -27,7 +27,6 @@ export const CartListProducts = ({ cart, setReloadCart, reloadCartList, setReloa
                     });
             };
             setReloadCartList(false);
-            console.log('hola')
 
         } )();
     }, [reloadCartList, cart]);
