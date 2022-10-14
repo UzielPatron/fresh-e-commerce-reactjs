@@ -12,7 +12,7 @@ const calcPrice = (price, discount = 0) => {
     else if(finalFinalPrice.length > 9){
         const lastPart = finalFinalPrice.slice(-6);
         const secondPart = finalFinalPrice.slice(-6, -9);
-        const firstPart = finalFinalPRice.slice(0, -9);
+        const firstPart = finalFinalPrice.slice(0, -9);
         const finalFinalFinalPrice = `${ firstPart }.${ secondPart }.${ lastPart }`;
         return finalFinalFinalPrice;
     }

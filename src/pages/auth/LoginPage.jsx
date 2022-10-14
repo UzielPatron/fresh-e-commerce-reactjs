@@ -5,10 +5,10 @@ import { startLoginUser } from '../../api/authApi';
 import { AuthHeader } from '../../components/auth/AuthHeader';
 import { UserContext } from '../../context/UserContext';
 import { useForm } from '../../hooks/useForm';
-import '../../stylesheets/pages/auth/registerPage.css';
 import { Alert } from '../../components/utils/Alert';
 import { useState } from 'react';
 import { Loading } from '../../components/utils/Loading';
+import '../../stylesheets/pages/auth/registerPage.css';
 
 export const LoginPage = () => {
     
